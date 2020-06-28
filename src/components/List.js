@@ -101,7 +101,7 @@ const List = ({ data, setData, mode, setMode, isToggle, setIsToggle }) => {
                             className="btn_edit"
                             onClick={() => setMode("update")}
                           >
-                            Edit
+                            update
                           </button>
                         </span>
                         <span>
@@ -139,7 +139,7 @@ const List = ({ data, setData, mode, setMode, isToggle, setIsToggle }) => {
                             className="btn_edit"
                             onClick={() => editToggle(i)}
                           >
-                            Edit
+                            edit
                           </button>
                         </span>
                         <span>

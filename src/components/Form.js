@@ -1,18 +1,32 @@
 import React from "react";
 
-const Form = () => {
+const Form = ({ onChangeTitle, onChangeName, onChangeDesc, handleSubmit }) => {
   return (
     <div className="form">
-      <form>
+      <form onSubmit={handleSubmit}>
         <input type="hidden" name="index" />
         <p>
-          <input type="text" name="title" placeholder="title" />
+          <input
+            type="text"
+            name="title"
+            placeholder="title"
+            onChange={onChangeTitle}
+          />
         </p>
         <p>
-          <input type="text" name="name" placeholder="name" />
+          <input
+            type="text"
+            name="name"
+            placeholder="name"
+            onChange={onChangeName}
+          />
         </p>
         <p>
-          <textarea name="desc" placeholder="description" />
+          <textarea
+            name="desc"
+            placeholder="description"
+            onChange={onChangeDesc}
+          />
         </p>
         <p>
           <button type="submit">등록</button>

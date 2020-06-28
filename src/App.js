@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ListContainer from "./containers/ListContainer";
 import FormContainer from "./containers/FormContainer";
 import "./styles.css";
 
 const App = () => {
-  const [mode, setMode] = useState("read");
+  const [mode, setMode] = useState("create");
   const [data, setData] = useState({
     content: [
       {
@@ -19,6 +19,11 @@ const App = () => {
     ],
     selectedID: 0
   });
+
+  useEffect(() => {
+    console.log(mode);
+  });
+
   return (
     <div className="App">
       <h1>Hi</h1>
