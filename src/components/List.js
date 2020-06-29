@@ -1,6 +1,14 @@
 import React from "react";
 
-const List = ({ data, setData, mode, setMode, isToggle, setIsToggle }) => {
+const List = ({
+  data,
+  setData,
+  mode,
+  setMode,
+  isToggle,
+  setIsToggle,
+  handleRemove
+}) => {
   // console.log(data.selectedID);
   const showDetailToggle = index => {
     setMode("read");
@@ -37,7 +45,7 @@ const List = ({ data, setData, mode, setMode, isToggle, setIsToggle }) => {
           <span className="col_btn">Edit</span>
           <span className="col_btn">Delete</span>
         </li>
-        {data.content.map((value, i) => {
+        {data.contents.map((value, i) => {
           return (
             <li
               key={value.index}
@@ -64,7 +72,7 @@ const List = ({ data, setData, mode, setMode, isToggle, setIsToggle }) => {
                     <span>
                       <button
                         className="btn_del"
-                        onClick={() => setMode("delete")}
+                        onClick={() => handleRemove(i)}
                       >
                         Delete
                       </button>
@@ -107,7 +115,7 @@ const List = ({ data, setData, mode, setMode, isToggle, setIsToggle }) => {
                         <span>
                           <button
                             className="btn_del"
-                            onClick={() => setMode("delete")}
+                            onClick={() => handleRemove(i)}
                           >
                             Delete
                           </button>
@@ -145,7 +153,7 @@ const List = ({ data, setData, mode, setMode, isToggle, setIsToggle }) => {
                         <span>
                           <button
                             className="btn_del"
-                            onClick={() => setMode("delete")}
+                            onClick={() => handleRemove(i)}
                           >
                             Delete
                           </button>

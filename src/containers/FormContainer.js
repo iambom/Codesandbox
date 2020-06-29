@@ -15,6 +15,25 @@ const FormContainer = ({ data, setData, mode, setMode }) => {
     e.preventDefault(); // form 태그에서 onSubmit 하면 화면이 바뀌게 되어서 그 것을 방지
     if (mode === "create") {
       console.log({ title, name, desc });
+      console.log(data.contents);
+      if (title === "") {
+        return alert("제목을 입력해주세요.");
+      } else {
+        let createContents = data.contents.concat({
+          index: data.maxContentID,
+          title: title,
+          name: name,
+          desc: desc
+        });
+        setData({
+          ...data,
+          contents: createContents,
+          selectedID: data.maxContentID,
+          maxContentID: ++data.maxContentID
+        });
+        console.log("new -> ", data.contents);
+        setMode("read");
+      }
     }
   };
 

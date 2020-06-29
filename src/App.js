@@ -4,9 +4,9 @@ import FormContainer from "./containers/FormContainer";
 import "./styles.css";
 
 const App = () => {
-  const [mode, setMode] = useState("create");
+  const [mode, setMode] = useState("read");
   const [data, setData] = useState({
-    content: [
+    contents: [
       {
         index: 0,
         title: "1번 퓨리오사가 장발이었다고? <매드맥스: 분노의 도로>",
@@ -17,7 +17,8 @@ const App = () => {
       { index: 1, title: "2번", name: "Lee", desc: "2번 detail" },
       { index: 2, title: "3번", name: "Park", desc: "3번 detail" }
     ],
-    selectedID: 0
+    selectedID: 0,
+    maxContentID: 3
   });
 
   useEffect(() => {
